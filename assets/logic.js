@@ -29,7 +29,23 @@ setInterval(currentDayUpdate, 1000);
 setInterval(compareTime, 15000);
 
 
+function storeInput (event){
+    var target = $(event.target);
+    var targetUI = target.siblings('.user-input').val();
+    var trimUi = $.trim(targetUI);
+    console.log(trimUi);
+    console.log(targetUI);
+    //$(".user-input").val().trim();
+//   if (target.is(".saveBtn")) {
+//       target.siblings('.user-input').val().trim();
+      console.log(target);
+      console.log(userInput);
+  }
 
+
+
+
+// target with reference to textarea set value to localstorage.getItem('key')
 
 
 
