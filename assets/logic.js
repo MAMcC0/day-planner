@@ -2,7 +2,7 @@
 
 var userInput = $('.user-input'); 
 var currentHour = moment().hour();
-var nine = $('#military-time-9gi');
+var nine = $('#military-time-9').val();
 var ten = parseInt($("#10"));
 var eleven = parseInt($("#11"));
 var twelve = parseInt($("#12"));
@@ -12,8 +12,7 @@ var fifteen = parseInt($("#15"));
 var sixteen = parseInt($("#16"));
 var seventeen = parseInt($("#17"));
 console.log(nine);
-var nineInt = parseInt(nine.id);
-console.log(nineInt)
+
 function currentDayUpdate() {
     var currentDay = document.querySelector("#currentDay");
     var time = moment().format("dddd MMMM Do YYYY");
