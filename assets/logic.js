@@ -1,20 +1,30 @@
-//moment js feature for current day
-//moment().format("dddd MMMM Do")
 
 
-
+var userInput = $('.user-input'); 
+var currentHour = moment().hour();
+var nine = $('#military-time-9gi');
+var ten = parseInt($("#10"));
+var eleven = parseInt($("#11"));
+var twelve = parseInt($("#12"));
+var thirteen = parseInt($("#13"));
+var fourteen = parseInt($("#14"));
+var fifteen = parseInt($("#15"));
+var sixteen = parseInt($("#16"));
+var seventeen = parseInt($("#17"));
+console.log(nine);
+var nineInt = parseInt(nine.id);
+console.log(nineInt)
 function currentDayUpdate() {
     var currentDay = document.querySelector("#currentDay");
-    var time = moment().format("dddd MMMM Do");
+    var time = moment().format("dddd MMMM Do YYYY");
     currentDay.innerHTML = time;
-
 }
+
+
 currentDayUpdate();
 setInterval(currentDayUpdate, 1000);
 
-//capture variabes for user input
-//var current Day = $("#current-day")
-//add classes and event listners on all save buttons
+
 
 //function to determine whether or not time has already passed
 //color code in respons
@@ -39,8 +49,7 @@ setInterval(currentDayUpdate, 1000);
 
 //setInterval to run the hourcolor updating function every 15-30s
 
-//moment function
-//capture moment for current time in hour moment().hours (militarytime)
+
 //does this onload in tandem with color code function
 
 
@@ -56,4 +65,4 @@ setInterval(currentDayUpdate, 1000);
 
 //event listener to save to local storage
 //key for each hour
-//$('.saveBtn).on('click', function to save to local storage)
+// $('.saveBtn').on('click', function to save to local storage);
