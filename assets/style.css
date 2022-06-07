@@ -28,6 +28,7 @@ textarea {
 .time-block {
   text-align: center;
   border-radius: 15px;
+  border-bottom: white 2px;
 }
 
 .row {
@@ -57,6 +58,15 @@ textarea {
   color: white;
 }
 
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 100,
+  'GRAD' 0,
+  'opsz' 48;
+  background-color:none;
+  
+}
 .saveBtn {
   border-left: 1px solid black;
   border-top-right-radius: 15px;
@@ -65,7 +75,8 @@ textarea {
   color: white;
 }
 
-.saveBtn i:hover {
+.saveBtn:hover {
   font-size: 20px;
   transition: all 0.3s ease-in-out;
+  color: black;
 }

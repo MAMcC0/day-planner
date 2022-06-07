@@ -1,6 +1,17 @@
 //moment js feature for current day
 //moment().format("dddd MMMM Do")
 
+
+
+function currentDayUpdate() {
+    var currentDay = document.querySelector("#currentDay");
+    var time = moment().format("dddd MMMM Do");
+    currentDay.innerHTML = time;
+
+}
+currentDayUpdate();
+setInterval(currentDayUpdate, 1000);
+
 //capture variabes for user input
 //var current Day = $("#current-day")
 //add classes and event listners on all save buttons
@@ -9,7 +20,7 @@
 //color code in respons
 //loop to go through all time blocks then compare each one to current hour var currentTime
 
-//variable that stores that blocks hour grab by timeblock id in id parse string to integer 
+//variable that stores that blocks hour grab by timeblock id in id parse string to integer
 // if statements
 // if (timebox < currentHour)
     //add pass class
@@ -33,7 +44,7 @@
 //does this onload in tandem with color code function
 
 
-//save task functon 
+//save task functon
 //reference to textarea and grab userinput via value
 //store value as var
 //event.target for save button
