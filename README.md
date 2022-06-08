@@ -10,5 +10,5 @@ HTML, CSS, JavaScript, Moment.JS
 Repo Link: https://github.com/MAMcC0/day-planner
 Live Link : https://mamcc0.github.io/day-planner/
 
-## Screenshot
+## Site Image
 ![image](./assets/Screenshot%20(14).png)
