@@ -1,4 +1,4 @@
-var userInput = $('.user-input'); 
+var userInput = $('.user-input');
 var currentHour = (moment().hour());
 
 
@@ -9,18 +9,18 @@ function currentDayUpdate() {
     currentDay.innerHTML = time;
 }
 
-function compareTime (){
-    for (i = 9; i < 18 ; i++){
+function compareTime() {
+    for (i = 9; i < 18; i++) {
         var hourRow = $(`#military-time-${i}`);
 
-        if(i < currentHour){
+        if (i < currentHour) {
             hourRow.addClass("past")
-        } else if ( i === currentHour){
+        } else if (i === currentHour) {
             hourRow.addClass("present");
-        } else if (i > currentHour){
-           hourRow.addClass("future");
+        } else if (i > currentHour) {
+            hourRow.addClass("future");
         }
-        
+
     }
 }
 compareTime();
@@ -29,32 +29,25 @@ setInterval(currentDayUpdate, 1000);
 setInterval(compareTime, 15000);
 
 
-function storeInput (event){
-    var target = $(event.target);
-    var targetUI = target.siblings('.user-input').val();
-    var trimUi = $.trim(targetUI);
-    console.log(trimUi);
-    console.log(targetUI);
-    //$(".user-input").val().trim();
-//   if (target.is(".saveBtn")) {
-//       target.siblings('.user-input').val().trim();
-      console.log(target);
-      console.log(userInput);
-  }
+function savedInput(event) {
+    var target = event.target;
+    var targetInput = $(target).siblings('.user-input').val();
+    var trimmedInput = $.trim(targetInput);
+    var hours = $(target).parent('.time-block').attr('id');
+    console.log(hours);
+        localStorage.setItem(hours, trimmedInput);
+    }
+   
+    $('#military-time-9 .user-input').val(localStorage.getItem("military-time-9"));
+    $('#military-time-10 .user-input').val(localStorage.getItem("military-time-10"));
+    $('#military-time-11 .user-input').val(localStorage.getItem("military-time-11"));
+    $('#military-time-12 .user-input').val(localStorage.getItem("military-time-12"));
+    $('#military-time-13 .user-input').val(localStorage.getItem("military-time-13"));
+    $('#military-time-14 .user-input').val(localStorage.getItem("military-time-14"));
+    $('#military-time-15 .user-input').val(localStorage.getItem("military-time-15"));
+    $('#military-time-16 .user-input').val(localStorage.getItem("military-time-16"));
+    $('#military-time-17 .user-input').val(localStorage.getItem("military-time-17"));
 
 
+    $('.saveBtn').on('click', savedInput);
 
-
-// target with reference to textarea set value to localstorage.getItem('key')
-
-
-
-//save task functon
-
-//use parent to target the specific hour based on the hour id
-//local storage set time as key and value as textarea text (setItem)
-
-
-//event listener to save to local storage
-//key for each hour
-$('.saveBtn').on('click', storeInput);
