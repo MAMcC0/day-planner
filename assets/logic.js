@@ -30,6 +30,21 @@ setInterval(compareTime, 15000);
 
 
 function savedInput(event) {
+    setInterval(displaySaved,10000);
+    
+    function displaySaved(){
+     if($("#save-msg").hasClass("hide")){
+        $("#save-msg").removeClass("hide").addClass("show");
+     }
+    }
+    function fadeOut(){
+        if($("#save-msg").hasClass("show")){
+            $("#save-msg").removeClass("show").addClass("hide");
+        }
+    }
+    setTimeout(fadeOut, 5000);
+
+
     var target = event.target;
     var targetInput = $(target).siblings('.user-input').val();
     var trimmedInput = $.trim(targetInput);
@@ -37,7 +52,7 @@ function savedInput(event) {
     console.log(hours);
         localStorage.setItem(hours, trimmedInput);
     }
-   
+    
     $('#military-time-9 .user-input').val(localStorage.getItem("military-time-9"));
     $('#military-time-10 .user-input').val(localStorage.getItem("military-time-10"));
     $('#military-time-11 .user-input').val(localStorage.getItem("military-time-11"));
