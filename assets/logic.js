@@ -2,13 +2,13 @@ var userInput = $('.user-input');
 var currentHour = (moment().hour());
 
 
-
+// gets the current day
 function currentDayUpdate() {
     var currentDay = document.querySelector("#currentDay");
     var time = moment().format("dddd MMMM Do YYYY");
     currentDay.innerHTML = time;
 }
-
+///compares time based on id of the rows
 function compareTime() {
     for (i = 9; i < 18; i++) {
         var hourRow = $(`#military-time-${i}`);
@@ -28,7 +28,7 @@ currentDayUpdate();
 setInterval(currentDayUpdate, 1000);
 setInterval(compareTime, 15000);
 
-
+// display message that it saved, then saves to local storage and then displays it
 function savedInput(event) {
     setInterval(displaySaved,10000);
     
